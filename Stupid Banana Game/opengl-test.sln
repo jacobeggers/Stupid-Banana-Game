@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "opengl-test", "opengl-test\opengl-test.csproj", "{0B740350-F60F-4E77-9322-7A79991884B7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0B740350-F60F-4E77-9322-7A79991884B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B740350-F60F-4E77-9322-7A79991884B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B740350-F60F-4E77-9322-7A79991884B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B740350-F60F-4E77-9322-7A79991884B7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2982E57D-8578-4730-ACFF-078B65216289}
+	EndGlobalSection
+EndGlobal
