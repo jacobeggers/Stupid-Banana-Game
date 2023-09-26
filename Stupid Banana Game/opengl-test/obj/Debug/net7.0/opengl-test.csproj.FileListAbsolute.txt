@@ -30,3 +30,35 @@ C:\Users\Jacob Eggers\Desktop\folder of thy everything\c#\opengl-test\opengl-tes
 C:\Users\Jacob Eggers\Desktop\folder of thy everything\c#\opengl-test\opengl-test\obj\Debug\net7.0\opengl-test.pdb
 C:\Users\Jacob Eggers\Desktop\folder of thy everything\c#\opengl-test\opengl-test\obj\Debug\net7.0\opengl-test.genruntimeconfig.cache
 C:\Users\Jacob Eggers\Desktop\folder of thy everything\c#\opengl-test\opengl-test\obj\Debug\net7.0\ref\opengl-test.dll
+C:\Users\Jacob Eggers\Documents\GitHub\Stupid-Banana-Game\Stupid Banana Game\opengl-test\bin\Debug\net7.0\opengl-test.exe
+C:\Users\Jacob Eggers\Documents\GitHub\Stupid-Banana-Game\Stupid Banana Game\opengl-test\bin\Debug\net7.0\opengl-test.deps.json
+C:\Users\Jacob Eggers\Documents\GitHub\Stupid-Banana-Game\Stupid Banana Game\opengl-test\bin\Debug\net7.0\opengl-test.runtimeconfig.json
+C:\Users\Jacob Eggers\Documents\GitHub\Stupid-Banana-Game\Stupid Banana Game\opengl-test\bin\Debug\net7.0\opengl-test.dll
+C:\Users\Jacob Eggers\Documents\GitHub\Stupid-Banana-Game\Stupid Banana Game\opengl-test\bin\Debug\net7.0\opengl-test.pdb
+C:\Users\Jacob Eggers\Documents\GitHub\Stupid-Banana-Game\Stupid Banana Game\opengl-test\bin\Debug\net7.0\OpenTK.Audio.OpenAL.dll
+C:\Users\Jacob Eggers\Documents\GitHub\Stupid-Banana-Game\Stupid Banana Game\opengl-test\bin\Debug\net7.0\OpenTK.Compute.dll
+C:\Users\Jacob Eggers\Documents\GitHub\Stupid-Banana-Game\Stupid Banana Game\opengl-test\bin\Debug\net7.0\OpenTK.Core.dll
+C:\Users\Jacob Eggers\Documents\GitHub\Stupid-Banana-Game\Stupid Banana Game\opengl-test\bin\Debug\net7.0\OpenTK.Graphics.dll
+C:\Users\Jacob Eggers\Documents\GitHub\Stupid-Banana-Game\Stupid Banana Game\opengl-test\bin\Debug\net7.0\OpenTK.Input.dll
+C:\Users\Jacob Eggers\Documents\GitHub\Stupid-Banana-Game\Stupid Banana Game\opengl-test\bin\Debug\net7.0\OpenTK.Mathematics.dll
+C:\Users\Jacob Eggers\Documents\GitHub\Stupid-Banana-Game\Stupid Banana Game\opengl-test\bin\Debug\net7.0\OpenTK.Windowing.Common.dll
+C:\Users\Jacob Eggers\Documents\GitHub\Stupid-Banana-Game\Stupid Banana Game\opengl-test\bin\Debug\net7.0\OpenTK.Windowing.Desktop.dll
+C:\Users\Jacob Eggers\Documents\GitHub\Stupid-Banana-Game\Stupid Banana Game\opengl-test\bin\Debug\net7.0\OpenTK.Windowing.GraphicsLibraryFramework.dll
+C:\Users\Jacob Eggers\Documents\GitHub\Stupid-Banana-Game\Stupid Banana Game\opengl-test\bin\Debug\net7.0\StbImageSharp.dll
+C:\Users\Jacob Eggers\Documents\GitHub\Stupid-Banana-Game\Stupid Banana Game\opengl-test\bin\Debug\net7.0\runtimes\linux-x64\native\libglfw.so.3.3
+C:\Users\Jacob Eggers\Documents\GitHub\Stupid-Banana-Game\Stupid Banana Game\opengl-test\bin\Debug\net7.0\runtimes\linux-x64\native\wayland\libglfw.so.3.3
+C:\Users\Jacob Eggers\Documents\GitHub\Stupid-Banana-Game\Stupid Banana Game\opengl-test\bin\Debug\net7.0\runtimes\osx-arm64\native\libglfw.3.dylib
+C:\Users\Jacob Eggers\Documents\GitHub\Stupid-Banana-Game\Stupid Banana Game\opengl-test\bin\Debug\net7.0\runtimes\osx-x64\native\libglfw.3.dylib
+C:\Users\Jacob Eggers\Documents\GitHub\Stupid-Banana-Game\Stupid Banana Game\opengl-test\bin\Debug\net7.0\runtimes\win-x64\native\glfw3.dll
+C:\Users\Jacob Eggers\Documents\GitHub\Stupid-Banana-Game\Stupid Banana Game\opengl-test\bin\Debug\net7.0\runtimes\win-x86\native\glfw3.dll
+C:\Users\Jacob Eggers\Documents\GitHub\Stupid-Banana-Game\Stupid Banana Game\opengl-test\obj\Debug\net7.0\opengl-test.csproj.AssemblyReference.cache
+C:\Users\Jacob Eggers\Documents\GitHub\Stupid-Banana-Game\Stupid Banana Game\opengl-test\obj\Debug\net7.0\opengl-test.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jacob Eggers\Documents\GitHub\Stupid-Banana-Game\Stupid Banana Game\opengl-test\obj\Debug\net7.0\opengl-test.AssemblyInfoInputs.cache
+C:\Users\Jacob Eggers\Documents\GitHub\Stupid-Banana-Game\Stupid Banana Game\opengl-test\obj\Debug\net7.0\opengl-test.AssemblyInfo.cs
+C:\Users\Jacob Eggers\Documents\GitHub\Stupid-Banana-Game\Stupid Banana Game\opengl-test\obj\Debug\net7.0\opengl-test.csproj.CoreCompileInputs.cache
+C:\Users\Jacob Eggers\Documents\GitHub\Stupid-Banana-Game\Stupid Banana Game\opengl-test\obj\Debug\net7.0\opengl-test.csproj.CopyComplete
+C:\Users\Jacob Eggers\Documents\GitHub\Stupid-Banana-Game\Stupid Banana Game\opengl-test\obj\Debug\net7.0\opengl-test.dll
+C:\Users\Jacob Eggers\Documents\GitHub\Stupid-Banana-Game\Stupid Banana Game\opengl-test\obj\Debug\net7.0\refint\opengl-test.dll
+C:\Users\Jacob Eggers\Documents\GitHub\Stupid-Banana-Game\Stupid Banana Game\opengl-test\obj\Debug\net7.0\opengl-test.pdb
+C:\Users\Jacob Eggers\Documents\GitHub\Stupid-Banana-Game\Stupid Banana Game\opengl-test\obj\Debug\net7.0\opengl-test.genruntimeconfig.cache
+C:\Users\Jacob Eggers\Documents\GitHub\Stupid-Banana-Game\Stupid Banana Game\opengl-test\obj\Debug\net7.0\ref\opengl-test.dll

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "V0CzIQO7IobBIU3Eck6dGkQV+3kpsmF8K1ABm3ADYMEG+FAESHIP7AiXyceHdrqsDAUGSsJj0CD2F8L+16ZH2g==",
+  "dgSpecHash": "KJimvrP0hC6/G6gUJ6vEcVkbJ8z77lgSuzVyCe7/Vy6IWZba6QcniCuZdIuMOsfY6PDyNtUsQSDvqSHcmuqflg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Jacob Eggers\\Desktop\\folder of thy everything\\c#\\opengl-test\\opengl-test\\opengl-test.csproj",
+  "projectFilePath": "C:\\Users\\Jacob Eggers\\Documents\\GitHub\\Stupid-Banana-Game\\Stupid Banana Game\\opengl-test\\opengl-test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Jacob Eggers\\.nuget\\packages\\opentk\\4.8.0\\opentk.4.8.0.nupkg.sha512",
     "C:\\Users\\Jacob Eggers\\.nuget\\packages\\opentk.audio.openal\\4.8.0\\opentk.audio.openal.4.8.0.nupkg.sha512",

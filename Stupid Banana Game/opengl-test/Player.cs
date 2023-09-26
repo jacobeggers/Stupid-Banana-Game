@@ -116,6 +116,9 @@ namespace opengl_test
             return canJump;
         }
 
+        // More precise collision detection (unfished perhaps could be used later)
+
+        /*
         public char getCollisionSide(GameObject other)
         {
             
@@ -196,5 +199,6 @@ namespace opengl_test
             }
             return '\0';
         }
+        */
     }
 }

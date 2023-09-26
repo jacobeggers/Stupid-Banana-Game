@@ -32,21 +32,51 @@ namespace opengl_test
         private static Wall[] walls;
 
         // function to load game
-        public static void loadGame(int nWalls, int nPlayers)
+        public static void loadGame(int[][] level)
         {
             // load game takes in values for each object type
             // and sets the number of each game object
-            numWalls = nWalls;
-            numPlayers = nPlayers;
+            numWalls = 50;
+            walls = new Wall[50];
+
+            numPlayers = 1;
+
+            int wallIncrement = 0;
+            int loopIncrement = 0;
+            for (int i = level.Length - 1; i >= 0; i--)
+            {
+                for (int j = 0; j < level[i].Length; j++)
+                {
+                    if (level[i][j] == 1)
+                    {
+                        walls[wallIncrement] = new Wall(j * 75, loopIncrement * 75);
+                        if (level[i - 1][j] == 1)
+                        {
+                            walls[wallIncrement].setNeighboringWalls(true, 'N');
+                        }
+                        if (level[i + 1][j] == 1)
+                        {
+                            walls[wallIncrement].setNeighboringWalls(true, 'S');
+                        }
+                        if (level[i][j - 1] == 1)
+                        {
+                            walls[wallIncrement].setNeighboringWalls(true, 'E');
+                        }
+                        if (level[i][j + 1] == 1)
+                        {
+                            walls[wallIncrement].setNeighboringWalls(true, 'W');
+                        }
+                        wallIncrement++;
+                    }
+                }
+                loopIncrement++;
+            }
+
 
             // create a new wall for each slot in the walls array
-            walls = new Wall[numWalls];
+            
 
             // assign a location for the walls in the veiwport
-            for (int i = 0; i < numWalls; i++)
-            {
-                walls[i] = new Wall(50, 250);
-            }
 
             // create a new player for each slot in the players array
             players = new Player[numPlayers];
@@ -84,11 +114,11 @@ namespace opengl_test
 
             framerate = cframerate;
 
-            // combine above arrays with arrays returned from the wall logic function
-            (returnX, returnY, returnWidth, returnHeight, objectType) = combineObjectsIntoArrays(returnX, returnY, returnWidth, returnHeight, objectType, wallLogic(framerate));
-
             // combine above arrays with arrays returned from the player logic function
             (returnX, returnY, returnWidth, returnHeight, objectType) = combineObjectsIntoArrays(returnX, returnY, returnWidth, returnHeight, objectType, playerLogic(framerate));
+
+            // combine above arrays with arrays returned from the wall logic function
+            (returnX, returnY, returnWidth, returnHeight, objectType) = combineObjectsIntoArrays(returnX, returnY, returnWidth, returnHeight, objectType, wallLogic(framerate));
 
             // return the variables containing important player info
             return (returnX, returnY, returnWidth, returnHeight, objectType);
@@ -158,23 +188,45 @@ namespace opengl_test
             int increment = 0;
             foreach (Wall wall in walls)
             {
-                /*
-                foreach (Player player in players)
+                if (wall != null)
                 {
-                    if (wall.getCollisionSide(player) == 'S')
+                    foreach (Player player in players)
                     {
-                        player.setCanJump(true);
-                        player.setMomentumY(0);
-                        player.setY(wall.getY() + wall.getHeight());
+                        switch (wall.getCollisionSide(player))
+                        {
+                            case 'N':
+                                player.setCanJump(true);
+                                player.setMomentumY(0);
+                                player.setY(wall.getY() + wall.getHeight());
+                                break;
+                            case 'S':
+                                player.setMomentumY(0);
+                                player.setY(wall.getY() - wall.getHeight());
+                                break;
+                            case 'E':
+                                player.setMomentumX(0);
+                                player.setX(wall.getX() + wall.getWidth());
+                                break;
+                            case 'W':
+                                player.setMomentumX(0);
+                                player.setX(wall.getX() - wall.getWidth());
+                                break;
+                        }
                     }
+
+                    //for (int i = 0; i < 4; i++)
+                    //{
+                    //    Console.WriteLine(wall.getNeighboringWalls()[i]);
+                    //}
+                    //Console.WriteLine("===============");
+
+                    returnWallX[increment] = wall.getX();
+                    returnWallY[increment] = wall.getY();
+                    returnWallWidth[increment] = wall.getWidth();
+                    returnWallHeight[increment] = wall.getHeight();
+                    objectType[increment] = wall.getStringId();
+                    increment++;
                 }
-                */
-                returnWallX[increment] = wall.getX();
-                returnWallY[increment] = wall.getY();
-                returnWallWidth[increment] = wall.getWidth();
-                returnWallHeight[increment] = wall.getHeight();
-                objectType[increment] = wall.getStringId();
-                increment++;
             }
 
             // return values for all wall objects
@@ -195,7 +247,6 @@ namespace opengl_test
             int increment = 0;
             foreach (Player player in players)
             {
-                player.getCollisionSide(walls[0]);
                 if (keyStrokes[0] == 'A')
                 {
                     player.changeX(-750, -1500, deltaTime());
@@ -206,11 +257,6 @@ namespace opengl_test
                 }
                 if (keyStrokes[0] == '\0')
                 {
-                    if (player.getMomentumX() + (-1500 * deltaTime() * deltaTime()) < 0 ||
-                        player.getMomentumX() + (1500 * deltaTime() * deltaTime()) > 0)
-                    {
-                        player.setMomentumX(0);
-                    }
                     if (player.getMomentumX() > 0)
                     {
                         player.changeX(0, -1500, deltaTime());
@@ -220,7 +266,7 @@ namespace opengl_test
                     }
                 }
 
-                if (keyStrokes[1] == '_') // && player.getCanJump() == true
+                if (keyStrokes[1] == '_' && player.getCanJump() == true)
                 {
                     player.setCanJump(false);
                     player.setMomentumY(1000.0f);

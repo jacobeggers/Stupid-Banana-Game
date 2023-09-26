@@ -20,7 +20,7 @@ namespace opengl_test
         {
             base.OnLoad();
             graphics = new Graphics();
-            GameLogic.loadGame(1, 1);
+            GameLogic.loadGame(Levels.level0);
         }
 
         protected override void OnRenderFrame(FrameEventArgs e)
