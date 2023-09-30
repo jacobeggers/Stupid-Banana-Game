@@ -7,6 +7,7 @@ using System.Reflection.Metadata.Ecma335;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using static OpenTK.Graphics.OpenGL.GL;
 
 namespace opengl_test
 {
@@ -117,9 +118,7 @@ namespace opengl_test
         }
 
         // More precise collision detection (unfished perhaps could be used later)
-
-        /*
-        public char getCollisionSide(GameObject other)
+        public (float, float) getCollisionSide(GameObject other)
         {
             
             float[] xPosPast = { base.getPreviousX(), base.getPreviousX(), base.getPreviousX() + base.getWidth(), base.getPreviousX() + getWidth() };
@@ -128,7 +127,7 @@ namespace opengl_test
             float[] xPosCurrent = { base.getX(), base.getX(), base.getX() + base.getWidth(), base.getX() + getWidth() };
             float[] yPosCurrent = { base.getY(), base.getY() + base.getHeight(), base.getY() + base.getHeight(), base.getY() };
 
-            float[] xPosOther = { other.getX(), other.getX(), other.getX() + other.getWidth(), other.getX() + getWidth() };
+            float[] xPosOther = { other.getX(), other.getX(), other.getX() + other.getWidth(), other.getX() + other.getWidth() };
             float[] yPosOther = { other.getY(), other.getY() + other.getHeight(), other.getY() + other.getHeight(), other.getY() };
 
             for (int i = 0; i < xPosPast.Length; i++)
@@ -140,7 +139,7 @@ namespace opengl_test
                     (float pointx3, float pointy3) = (xPosOther[j], yPosOther[j]);
                     (float pointx4, float pointy4) = (xPosOther[0], yPosOther[0]);
 
-                    if (j != 3)
+                    if (j != xPosOther.Length - 1)
                     {
                         (pointx4, pointy4) = (xPosOther[j + 1], yPosOther[j + 1]);
                     }
@@ -151,54 +150,15 @@ namespace opengl_test
                     float beta = ((pointx1 - pointx3) * (pointy1- pointy2) - (pointy1 - pointy3) * (pointx1 - pointx2)) /
                         ((pointx1 - pointx2) * (pointy3 - pointy4) - (pointy1 - pointy2) * (pointx3 - pointx4));
 
-                    char getSide()
+                    if (alpha >= 0 && alpha <= 1 && beta >= 0 && beta <= 1)
                     {
-                        float object1CenterX = base.getPreviousX() + base.getWidth() / 2;
-                        float object1CenterY = base.getPreviousY() + base.getHeight() / 2;
-                        float object2CenterX = other.getX() + other.getWidth() / 2;
-                        float object2CenterY = other.getY() + other.getHeight() / 2;
-
-                        float yintNegative = object2CenterX + object2CenterY;
-                        float yintPositive = object2CenterY - object2CenterX;
-
-                        if (object1CenterY > -1 * object1CenterX + yintNegative && object1CenterY > 1 * object1CenterX + yintPositive)
-                        {
-
-                            Console.WriteLine('N');
-                            return 'N';
-                        }
-                        else if (object1CenterY < -1 * object1CenterX + yintNegative && object1CenterY > 1 * object1CenterX + yintPositive)
-                        {
-                            Console.WriteLine('W');
-                            return 'W';
-                        }
-                        else if (object1CenterY > -1 * object1CenterX + yintNegative && object1CenterY < 1 * object1CenterX + yintPositive)
-                        {
-
-                            Console.WriteLine('E');
-                            return 'E';
-                        }
-                        else if (object1CenterY < -1 * object1CenterX + yintNegative && object1CenterY < 1 * object1CenterX + yintPositive)
-                        {
-                            Console.WriteLine('S');
-                            return 'S';
-                        }
-                        return '\0';
-                    }
-
-                    if (alpha > 0 && alpha < 1 && beta > 0 && beta < 1)
-                    {
-                        return getSide();
-                    }
-                    else
-                    {
-                        //Console.WriteLine(xPosOther[2] + " : " + yPosOther[2]);
-                        
+                        float resultX = pointx1 + alpha * (pointx2 - pointx1);
+                        float resultY = pointy1 + alpha * (pointx2 - pointx1);
+                        return (resultX, resultY);
                     }
                 }
             }
-            return '\0';
+            return (0, 0);
         }
-        */
     }
 }

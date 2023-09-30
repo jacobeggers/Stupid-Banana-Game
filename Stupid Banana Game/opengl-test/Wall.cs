@@ -23,24 +23,32 @@ namespace Program
                 float object2CenterX = other.getPreviousX() + other.getWidth() / 2;
                 float object2CenterY = other.getPreviousY() + other.getHeight() / 2;
 
-                float yintNegative = object2CenterX + object2CenterY;
-                float yintPositive = object2CenterY - object2CenterX;
+                float yintNegative = object1CenterY + (base.getHeight() / base.getWidth() * object1CenterX);
+                float yintPositive = object1CenterY - (base.getHeight() / base.getWidth() * object1CenterX);
 
-                if (object1CenterY > -1 * object1CenterX + yintNegative && object1CenterY > 1 * object1CenterX + yintPositive)
+                if (object2CenterY > -1 * base.getHeight() / base.getWidth() * object2CenterX + yintNegative &&
+                    object2CenterY > 1 * base.getHeight() / base.getWidth() * object2CenterX + yintPositive &&
+                    neighboringWalls[0] == false)
                 {
-                    return 'S';
+                    return 'N';
                 }
-                else if (object1CenterY < -1 * object1CenterX + yintNegative && object1CenterY > 1 * object1CenterX + yintPositive)
-                {
-                    return 'E';
-                }
-                else if (object1CenterY > -1 * object1CenterX + yintNegative && object1CenterY < 1 * object1CenterX + yintPositive)
+                else if (object2CenterY < -1 * base.getHeight() / base.getWidth() * object2CenterX + yintNegative &&
+                    object2CenterY > 1 * base.getHeight() / base.getWidth() * object2CenterX + yintPositive &&
+                    neighboringWalls[2] == false)
                 {
                     return 'W';
                 }
-                else if (object1CenterY < -1 * object1CenterX + yintNegative && object1CenterY < 1 * object1CenterX + yintPositive)
+                else if (object2CenterY > -1 * base.getHeight() / base.getWidth() * object2CenterX + yintNegative &&
+                    object2CenterY < 1 * base.getHeight() / base.getWidth() * object2CenterX + yintPositive &&
+                    neighboringWalls[3] == false)
                 {
-                    return 'N';
+                    return 'E';
+                }
+                else if (object2CenterY < -1 * base.getHeight() / base.getWidth() * object2CenterX + yintNegative &&
+                    object2CenterY < 1 * base.getHeight() / base.getWidth() * object2CenterX + yintPositive &&
+                    neighboringWalls[1] == false)
+                {
+                    return 'S';
                 }
             }
             return '\0';

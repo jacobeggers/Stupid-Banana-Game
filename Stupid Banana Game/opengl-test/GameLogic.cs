@@ -50,21 +50,33 @@ namespace opengl_test
                     if (level[i][j] == 1)
                     {
                         walls[wallIncrement] = new Wall(j * 75, loopIncrement * 75);
-                        if (level[i - 1][j] == 1)
+                        if (i != 0)
                         {
-                            walls[wallIncrement].setNeighboringWalls(true, 'N');
+                            if (level[i - 1][j] == 1)
+                            {
+                                walls[wallIncrement].setNeighboringWalls(true, 'N');
+                            }
                         }
-                        if (level[i + 1][j] == 1)
+                        if (i != level.Length - 1)
                         {
-                            walls[wallIncrement].setNeighboringWalls(true, 'S');
+                            if (level[i + 1][j] == 1)
+                            {
+                                walls[wallIncrement].setNeighboringWalls(true, 'S');
+                            }
                         }
-                        if (level[i][j - 1] == 1)
+                        if (j != 0)
                         {
-                            walls[wallIncrement].setNeighboringWalls(true, 'E');
+                            if (level[i][j - 1] == 1)
+                            {
+                                walls[wallIncrement].setNeighboringWalls(true, 'E');
+                            }
                         }
-                        if (level[i][j + 1] == 1)
+                        if (j != level[i].Length - 1)
                         {
-                            walls[wallIncrement].setNeighboringWalls(true, 'W');
+                            if (level[i][j + 1] == 1)
+                            {
+                                walls[wallIncrement].setNeighboringWalls(true, 'W');
+                            }
                         }
                         wallIncrement++;
                     }
@@ -190,36 +202,6 @@ namespace opengl_test
             {
                 if (wall != null)
                 {
-                    foreach (Player player in players)
-                    {
-                        switch (wall.getCollisionSide(player))
-                        {
-                            case 'N':
-                                player.setCanJump(true);
-                                player.setMomentumY(0);
-                                player.setY(wall.getY() + wall.getHeight());
-                                break;
-                            case 'S':
-                                player.setMomentumY(0);
-                                player.setY(wall.getY() - wall.getHeight());
-                                break;
-                            case 'E':
-                                player.setMomentumX(0);
-                                player.setX(wall.getX() + wall.getWidth());
-                                break;
-                            case 'W':
-                                player.setMomentumX(0);
-                                player.setX(wall.getX() - wall.getWidth());
-                                break;
-                        }
-                    }
-
-                    //for (int i = 0; i < 4; i++)
-                    //{
-                    //    Console.WriteLine(wall.getNeighboringWalls()[i]);
-                    //}
-                    //Console.WriteLine("===============");
-
                     returnWallX[increment] = wall.getX();
                     returnWallY[increment] = wall.getY();
                     returnWallWidth[increment] = wall.getWidth();
@@ -259,26 +241,45 @@ namespace opengl_test
                 {
                     if (player.getMomentumX() > 0)
                     {
-                        player.changeX(0, -1500, deltaTime());
+                        player.changeX(0, -2000, deltaTime());
                     } else if (player.getMomentumX() < 0)
                     {
-                        player.changeX(0, 1500, deltaTime());
+                        player.changeX(0, 2000, deltaTime());
                     }
                 }
 
-                if (keyStrokes[1] == '_' && player.getCanJump() == true)
+                if (keyStrokes[1] == '_') // && player.getCanJump() == true
                 {
                     player.setCanJump(false);
-                    player.setMomentumY(1000.0f);
+                    player.setMomentumY(1500.0f);
                 }
 
-                player.changeY(-2000, -3000, deltaTime());
+                player.changeY(-2000, -4000, deltaTime());
 
                 if (player.getY() < 0)
                 {
                     player.setMomentumY(0);
-                    player.setY(0);
+                    player.setY(500);
                 }
+
+                
+
+                player.setCanJump(false);
+                foreach (Wall wall in walls)
+                {
+                    if (wall != null)
+                    {
+                        (float x, float y) = player.getCollisionSide(wall);
+                        if (x != 0 && y != 0)
+                        {
+                            Console.WriteLine(y);
+                            player.setY(wall.getY() + wall.getHeight() + 0.1f);
+                            player.setMomentumY(0);
+                        }
+                    }
+                }
+
+                // Console.WriteLine(player.getCanJump());
 
                 returnPlayerX[increment] = player.getX();
                 returnPlayerY[increment] = player.getY();

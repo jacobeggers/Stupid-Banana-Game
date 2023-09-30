@@ -30,7 +30,7 @@ namespace opengl_test
             // Call only once other wise strange things begin to happen
             framerate = Framerate.getFramerate();
 
-            //Console.WriteLine(framerate + " : FPS");
+            // Console.WriteLine(framerate + " : FPS");
             GL.Clear(ClearBufferMask.ColorBufferBit);
 
             GameLogic.setKeyStrokes(getKeyBoardInput());
